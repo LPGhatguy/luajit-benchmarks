@@ -49,6 +49,8 @@ return function(iterations, no_jit_iterations)
 	end
 
 	function bench:jitonoff(func)
+		collectgarbage()
+		collectgarbage()
 		jit.flush()
 		jit.on()
 		self.iterations = self.jit_iterations
@@ -56,6 +58,8 @@ return function(iterations, no_jit_iterations)
 
 		io.write("\n\n")
 
+		collectgarbage()
+		collectgarbage()
 		jit.flush()
 		jit.off()
 		self.iterations = self.no_jit_iterations
