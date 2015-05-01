@@ -1,0 +1,25 @@
+LuaJIT 2.1-alpha c821e0a
+Windows, 32-bit
+
+Unpack comparison
+
+Compares vanilla NYI unpack with a couple other implementations:
+- Neffi #1 (impure recursion)
+- LPGhatguy (code generation)
+- Neffi #2 (CPS + tailcall)
+
+
+JIT on, 10000000 iterations:
+                     LPGhatguy  0.315s (  1x  best or   100%)
+                      Neffi #2  0.326s (  1x  best or   103%)
+                      Baseline   0.55s (  2x  best or   175%)
+                      Neffi #1  1.264s (  4x  best or   401%)
+
+
+JIT off, 10000000 iterations:
+                      Baseline  0.613s (  1x  best or   100%)
+                     LPGhatguy  1.244s (  2x  best or   203%)
+                      Neffi #1  2.373s (  4x  best or   387%)
+                      Neffi #2  3.466s (  6x  best or   565%)
+
+

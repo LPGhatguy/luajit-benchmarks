@@ -1,0 +1,20 @@
+LuaJIT 2.1-alpha c821e0a
+Windows, 32-bit
+
+Iteration benchmark
+
+Compares iteration speeds of iteration methods:
+- varargs (using select)
+- sequences (using ipairs)
+
+
+JIT on, 10000000 iterations:
+                 Varargs (...)  0.005s (  1x  best or   100%)
+                Sequence {...}   1.65s (330x  best or  33000%)
+
+
+JIT off, 10000000 iterations:
+                 Varargs (...)  1.465s (  1x  best or   100%)
+                Sequence {...}  2.489s (  2x  best or   170%)
+
+

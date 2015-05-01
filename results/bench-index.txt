@@ -1,0 +1,21 @@
+LuaJIT 2.1-alpha c821e0a
+Windows, 32-bit
+
+Indexing benchmark
+
+Compares indexing using pure access, table value __index (redirect) and
+function value __index.
+
+
+JIT on, 1000000000 iterations:
+            function interface  0.435s (  1x  best or   100%)
+            redirect interface  0.435s (  1x  best or   100%)
+                      baseline  0.437s (  1x  best or   100%)
+
+
+JIT off, 10000000 iterations:
+                      baseline  0.471s (  1x  best or   100%)
+            redirect interface  0.818s (  2x  best or   174%)
+            function interface  1.161s (  2x  best or   246%)
+
+
